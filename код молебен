@@ -1,0 +1,27 @@
+В форме name3-1...
+
+
+<!--Код для полей формы-->
+<script>
+function waitForElement(e,t,n=5e3){const r=setInterval((()=>{
+  let n=document.querySelector(e);n&&(clearInterval(r),t(e,n))}),100);setTimeout((()=>{clearInterval(r)}),n)}
+waitForElement('[name="name3-10"]', () => {
+$('.form1 input[name*="name1"]').each(function(){
+this.addEventListener('input', function(e) {
+  $(`.name1-${e.target.name.split('-')[1]} .tn-atom`).text(e.target.value)
+})
+})
+
+$('.form2 input[name*="name2"]').each(function(){
+this.addEventListener('input', function(e) {
+  $(`.name2-${e.target.name.split('-')[1]} .tn-atom`).text(e.target.value)
+})
+})
+
+$('.form3 input[name*="name3"]').each(function(){
+this.addEventListener('input', function(e) {
+  $(`.name3-${e.target.name.split('-')[1]} .tn-atom`).text(e.target.value)
+})
+})
+})
+</script>
